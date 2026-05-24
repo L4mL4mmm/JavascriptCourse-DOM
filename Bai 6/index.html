@@ -1,0 +1,30 @@
+<button id="btn-add">Add Item</button>
+<button id="btn-remove">Remove Last</button>
+
+<ul id="item-list">
+  </ul>
+
+<script>
+  const itemList = document.getElementById('item-list');
+  const btnAdd = document.getElementById('btn-add');
+  const btnRemove = document.getElementById('btn-remove');
+
+  // Xử lý thêm phần tử
+  btnAdd.addEventListener('click', () => {
+    const newItem = document.createElement('li');
+    newItem.textContent = 'New Item';
+    itemList.appendChild(newItem);
+  });
+
+  // Xử lý xóa phần tử cuối cùng
+  btnRemove.addEventListener('click', () => {
+    const lastItem = itemList.lastElementChild; 
+    
+    // Kiểm tra nếu danh sách còn phần tử thì mới xóa
+    if (lastItem) {
+      lastItem.remove();
+    } else {
+      console.log('Danh sách đã trống!');
+    }
+  });
+</script>

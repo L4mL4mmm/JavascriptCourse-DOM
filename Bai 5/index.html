@@ -1,0 +1,14 @@
+<input type="text" id="user-input" placeholder="Nhập gì đó vào đây...">
+<p>Phím bạn vừa nhấn: <strong id="key-display">Chưa có</strong></p>
+
+<script>
+  // Chọn các phần tử DOM
+  const userInput = document.getElementById('user-input');
+  const keyDisplay = document.getElementById('key-display');
+
+  // Lắng nghe sự kiện keydown
+  userInput.addEventListener('keydown', (e) => {
+    // e.key trả về tên của phím được nhấn (Ví dụ: 'Enter', 'a', 'ArrowUp')
+    keyDisplay.textContent = e.key;
+  });
+</script>

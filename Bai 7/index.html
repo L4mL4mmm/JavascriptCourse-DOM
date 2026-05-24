@@ -1,0 +1,27 @@
+<form id="register-form">
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  const registerForm = document.getElementById('register-form');
+
+  registerForm.addEventListener('submit', (e) => {
+    // Ngăn chặn hành vi reload trang mặc định của form
+    e.preventDefault();
+
+    // Lấy giá trị từ các ô input
+    const usernameVal = document.getElementById('username').value;
+    const emailVal = document.getElementById('email').value;
+
+    // Gom nhóm thành Object
+    const formData = {
+      username: usernameVal,
+      email: emailVal
+    };
+
+    // In kết quả ra Console
+    console.log('Dữ liệu Form đăng ký:', formData);
+  });
+</script>

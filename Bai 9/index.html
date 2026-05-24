@@ -1,0 +1,22 @@
+<div id="parent" style="padding: 50px; background-color: #f0f0f0; text-align: center;">
+  <h3>Parent Box</h3>
+  <button id="child" style="padding: 10px 20px;">Child Button</button>
+</div>
+
+<script>
+  const parent = document.getElementById('parent');
+  const child = document.getElementById('child');
+
+  // Sự kiện của phần tử Cha
+  parent.addEventListener('click', () => {
+    console.log('-> Sự kiện của [PARENT] được kích hoạt!');
+  });
+
+  // Sự kiện của phần tử Con
+  child.addEventListener('click', (e) => {
+    // Ngăn chặn sự kiện lan truyền (bọt khí) lên các phần tử cha
+    e.stopPropagation();
+    
+    console.log('-> Sự kiện của [CHILD] được kích hoạt!');
+  });
+</script>

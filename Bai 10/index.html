@@ -1,0 +1,29 @@
+<div style="text-align: center; margin-top: 50px;">
+  <button id="btn-change" style="padding: 12px 24px; font-size: 16px; cursor: pointer;">
+    Change Background
+  </button>
+  <h2 style="margin-top: 20px;">Màu hiện tại: <span id="color-text">default</span></h2>
+</div>
+
+<script>
+  // Khởi tạo mảng màu sắc mẫu
+  const colors = ["red", "blue", "green", "yellow", "purple"];
+  
+  const btnChange = document.getElementById('btn-change');
+  const colorText = document.getElementById('color-text');
+
+  btnChange.addEventListener('click', () => {
+    // Tạo chỉ số index ngẫu nhiên từ 0 đến (colors.length - 1)
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    const selectedColor = colors[randomIndex];
+
+    // Thay đổi màu nền của thẻ <body>
+    document.body.style.backgroundColor = selectedColor;
+
+    // Hiển thị tên/mã màu lên giao diện
+    colorText.textContent = selectedColor;
+    
+    // Tùy biến thêm: Đổi màu chữ của text hiển thị cho đồng bộ
+    colorText.style.color = selectedColor === 'yellow' ? 'black' : selectedColor;
+  });
+</script>

@@ -1,0 +1,26 @@
+<ul id="task-list">
+  <li>Item 1 <button class="btn-delete">Xóa</button></li>
+  <li>Item 2 <button class="btn-delete">Xóa</button></li>
+  <li>Item 3 <button class="btn-delete">Xóa</button></li>
+  <li>Item 4 <button class="btn-delete">Xóa</button></li>
+  <li>Item 5 <button class="btn-delete">Xóa</button></li>
+</ul>
+
+<script>
+  // Lấy tất cả các nút bấm có class "btn-delete"
+  const deleteButtons = document.querySelectorAll('.btn-delete');
+
+  // Duyệt qua từng nút bấm để gán sự kiện click
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      // e.target chính là nút bấm được click
+      const targetButton = e.target;
+      
+      // Tìm thẻ <li> chứa nút bấm này bằng parentElement
+      const liTarget = targetButton.parentElement;
+      
+      // Xóa thẻ <li> đó khỏi DOM
+      liTarget.remove();
+    });
+  });
+</script>
